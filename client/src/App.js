@@ -24,12 +24,12 @@ const App = () => {
     return (
         <Container maxwidth="lg">
           <AppBar className={classes.appBar} position="static" color="inherit">
-            <Typography className={classes.heading} variant="h2" align="center" style={{ color: 'darkblue', fontFamily: 'Arial' }}>FAKEBOOK</Typography>
+            <Typography className={classes.heading} variant="h2" align="center" style={{ color: 'primary', fontFamily: 'Arial' }}>FAKEBOOK</Typography>
             <img className={classes.image} src={memories} alt="memories" height="60" />
           </AppBar>
           <Grow in>
               <Container>
-                <Grid container justifyContent="space-between" alignItems="stretch" spacing={3}>
+                <Grid className={classes.mainContainer} container justifyContent="space-between" alignItems="stretch" spacing={3}>
                   <Grid item xs={12} sm={7}>
                     <Posts setCurrentId={setCurrentId}/>
                   </Grid>
