@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}))
 app.use('/posts', postRoutes)
 
 app.get('/', (req,res) => {
-    res.send('Hello to fakebook API')
+    res.send('Hello to Moments API')
 })
 
 
