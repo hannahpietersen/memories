@@ -6,10 +6,10 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import { GoogleLogin } from 'react-google-login';
 
 
-import Icon from './Icon';
 import useStyles from './styles'
 import { AUTH } from '../../constants/actionTypes';
 import Input from './Input'
+import Icon from './Icon'
 
 
 const Auth = () => {
