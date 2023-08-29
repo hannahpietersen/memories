@@ -16,16 +16,16 @@ This is the repository to the Moments web application for people to post their r
 
 ### The Challenge
 
-Create a fullstack Moments web application using the MERN stack
+Create a full-stack Moments web application using the MERN stack
 
 ### Screenshot
 
-[!screenshot](tenzies-game/src/screenshots/screenshot.png)
+[screenshot](!tenzies-game/src/screenshots/screenshot.png)
 
 
 ### Links
 
-- Live Site URL: [!@Netlify](https://tenzies-byhannah.netlify.app/)
+- Live Site URL: [@Netlify](!https://tenzies-byhannah.netlify.app/)
 - Solution URL: [@GitHub](https://github.com/hannahpietersen/memories)
 
 ### Getting Started with Create React App
@@ -37,7 +37,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - React.JS
 - Node.JS/Express.JS
 - Material-UI core/icons
-- Mongodb
+- MongoDB
 - Google OAuth
 
 ### Useful resources
@@ -50,5 +50,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
   ## Author
 
-- Website - [!Hannah Kongara](https://hannahk.netlify.app/)
+- Website - [Hannah Kongara](!https://hannahk.netlify.app/)
  
