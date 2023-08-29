@@ -1,4 +1,4 @@
-# [Moments](#moments)
+# [Moments]
 This is the repository to the Moments web application for people to post their recent memories
 
 ## Table of Contents
