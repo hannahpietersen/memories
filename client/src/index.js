@@ -12,7 +12,7 @@ import './index.css'
 
 const store = configureStore({
   reducer: reducers,
-  middleware: [thunk]
+  applyMiddleware: [thunk]
 });
 
 ReactDOM.render(

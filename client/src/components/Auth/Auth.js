@@ -14,8 +14,8 @@ import Icon from './Icon'
 
 const Auth = () => {
    const classes = useStyles() 
-   const navigate = useNavigate()
-   const dispatch = useDispatch()
+   //const navigate = useNavigate()
+   //const dispatch = useDispatch()
     
 
    const [isSignup, setIsSignup] = useState(false); 
@@ -41,19 +41,11 @@ const Auth = () => {
 
 
     const googleSuccess = async (res) => {
-        const result = res?.profileObj;
-        const token = res?.tokenId;
-    
-        try {
-          dispatch({ type: AUTH, data: { result, token } });
-    
-          navigate.push('/');
-        } catch (error) {
-          console.log(error);
-        }
-      };
-    
-      const googleError = () => alert('Google Sign In was unsuccessful. Try again later');
+        console.log(res)
+    }
+      
+      
+      const googleError = () => console.log('Google Sign In was unsuccessful. Try again later');
     
  
     return (
@@ -78,7 +70,7 @@ const Auth = () => {
               <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
                 { isSignup ? 'Sign Up' : 'Sign In' }
               </Button>
-              <GoogleLogin clientId="707050532629-s3tm6vajahpu4bn8uscaneajrbr0l4f0.apps.googleusercontent.com"
+              <GoogleLogin clientId= "707050532629-0l140ec8fq37ql1l83m3adg8sjbc40pj.apps.googleusercontent.com"
                render={(renderProps) => (
                 <Button className={classes.googleButton} color="primary" 
                 fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} 
@@ -91,12 +83,12 @@ const Auth = () => {
               cookiePolicy="single_host_origin"
               />
               <Grid container justifyContent="flex-end">
-            <Grid item>
-              <Button onClick={switchMode}>
-                { isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign Up" }
-              </Button>
-            </Grid>
-          </Grid>
+                <Grid item>
+                  <Button onClick={switchMode}>
+                    { isSignup ? 'Already have an account? Sign in' : "Don't have an account? Sign Up" }
+                  </Button>
+                </Grid>
+             </Grid>
 
            </form>
         </Paper>
