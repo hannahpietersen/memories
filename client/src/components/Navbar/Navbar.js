@@ -15,12 +15,28 @@ const Navbar = () => {
     const location = useLocation();
     const navigate = useNavigate();
  
- 
-    
-    
+   
     const logout = () => {
+        dispatch({ type: actionType.LOGOUT });
+    
+        navigate.push('/auth');
+    
+        setUser(null);
+      }
+    
 
-    }
+
+    useEffect(() => {
+      const token = user?.token;
+  
+      if (token) {
+        const decodedToken = decode(token);
+  
+        if (decodedToken.exp * 1000 < new Date().getTime()) logout();
+      }
+  
+      setUser(JSON.parse(localStorage.getItem('profile')));
+    }, [location]);
     
     return (
      <AppBar className={classes.appBar} position="static" color="inherit">
@@ -46,6 +62,7 @@ const Navbar = () => {
     
   )
 }
+
 
 export default Navbar
 

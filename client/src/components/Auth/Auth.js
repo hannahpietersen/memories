@@ -8,16 +8,20 @@ import { GoogleLogin } from 'react-google-login';
 
 import useStyles from './styles'
 import { AUTH } from '../../constants/actionTypes';
+import { signin, signup } from '../../actions/auth'
 import Input from './Input'
 import Icon from './Icon'
 
 
+const initialState = { firstName: '', lastName: '', email: '', password: '', confirmPassword: '' }
+
 const Auth = () => {
    const classes = useStyles() 
-   //const navigate = useNavigate()
-   //const dispatch = useDispatch()
+   const navigate = useNavigate()
+   const dispatch = useDispatch()
     
 
+   const [form, setForm] = useState(initialState)
    const [isSignup, setIsSignup] = useState(false); 
    const [showPassword, setShowPassword] = useState(false);
   const handleShowPassword = () => setShowPassword(!showPassword);
@@ -25,13 +29,17 @@ const Auth = () => {
               //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 client secret
     
 
-    const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+            
+      if (isSignup) {
+          dispatch(signup(form, navigate));
+      } else {
+          dispatch(signin(form, navigate));
+          }
+      }
 
-    }
-
-    const handleChange = () => {
-
-    }
+      const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value })
 
     const switchMode = () => {
         //setForm(initialState);
@@ -41,7 +49,16 @@ const Auth = () => {
 
 
     const googleSuccess = async (res) => {
-        console.log(res)
+      const result = res?.profileObj
+      const token = res?.tokenId
+
+      try {
+        dispatch({ type: AUTH, data: { result, token } });
+  
+        navigate.push('/');
+      } catch (error) {
+        console.log(error);
+      }
     }
       
       
