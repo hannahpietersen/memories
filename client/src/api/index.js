@@ -12,11 +12,12 @@ API.interceptors.request.use((req) => {
 });
 
 
-export const fetchPosts = () => axios.get(API);
-export const createPost = (newPost) => axios.post(API, newPost);
-export const updatePost = (id, updatedPost) => axios.patch(`${API}/${id}`, updatedPost);
-export const deletePost = (id) => axios.delete(`${API}/${id}`)
-export const likePost = (id) => axios.patch(`${API}/${id}/likePost`)
+export const fetchPost = (id) => API.get(`/posts/${id}`);
+export const fetchPosts = (page) => API.get(`/posts?page=${page}`);
+export const createPost = (newPost) => API.post('/posts', newPost);
+export const updatePost = (id, updatedPost) => API.patch(`/posts/${id}`, updatedPost);
+export const deletePost = (id) => API.delete(`/posts/${id}`);
+export const likePost = (id) => API.patch(`/posts/${id}/likePost`);
 
 
 export const signIn = (formData) => API.post('/user/signin', formData);
